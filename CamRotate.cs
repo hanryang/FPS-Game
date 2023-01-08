@@ -21,5 +21,10 @@ public class CamRotate : MonoBehaviour
         // 3. 회전 방향으로 물체를 회전시킨다.
         // r = r0 + vt
         transform.eulerAngles += dir * rotSpeed * Time.deltaTime;
+
+        // 4. x축 회전(상하 회전) 값을 -90도 ~ 90도 사이로 제한한다.
+        Vector3 rot = transform.eulerAngles;
+        rot.x = Mathf.Clamp(rot.x, -90f, 90f);
+        transform.eulerAngles = rot;
     }
 }
