@@ -21,6 +21,6 @@ public class PlayerRotate : MonoBehaviour
         mx += mouse_X * rotSpeed * Time.deltaTime;
 
         // 2.물체를 회전 방향으로 회전시킨다.
-        transform.eulerAngles = new Vector3(-my, mx, 0);
+        transform.eulerAngles = new Vector3(0, mx, 0);
     }
 }
