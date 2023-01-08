@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CamRotate : MonoBehaviour
 {
+    // 회전 속도 변수
+    public float rotSpeed = 200f;
 
     // Update is called once per frame
     void Update()
@@ -15,5 +17,9 @@ public class CamRotate : MonoBehaviour
 
         // 2. 마우스 입력 값을 이용해 회전 방향을 결정한다.
         Vector3 dir = new Vector3(-mouse_Y, mouse_X, 0);
+
+        // 3. 회전 방향으로 물체를 회전시킨다.
+        // r = r0 + vt
+        transform.eulerAngles += dir * rotSpeed * Time.deltaTime;
     }
 }
