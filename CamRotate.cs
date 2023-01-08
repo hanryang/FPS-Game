@@ -26,8 +26,11 @@ public class CamRotate : MonoBehaviour
         // 1-2 마우스 상하 이동 회전 변수(my)의 값을 -90도 ~ 90도 사이로 제한한다.
         my = Mathf.Clamp(my, -90f,  90f);
 
-        // 2. 마우스 입력 값을 이용해 회전 방향을 결정한다.
-        Vector3 dir = new Vector3(-my, mx, 0);
+        // 2.물체를 회전 방향으로 회전시킨다.
+        transform.eulerAngles = new Vector3(-my, mx, 0);
+
+       /* // 2. 마우스 입력 값을 이용해 회전 방향을 결정한다.
+        Vector3 dir = new Vector3(-mouse_X, mouse_Y, 0);
 
         // 3. 회전 방향으로 물체를 회전시킨다.
         // r = r0 + vt
@@ -36,6 +39,6 @@ public class CamRotate : MonoBehaviour
         // 4. x축 회전(상하 회전) 값을 -90도 ~ 90도 사이로 제한한다.
         Vector3 rot = transform.eulerAngles;
         rot.x = Mathf.Clamp(rot.x, -90f, 90f);
-        transform.eulerAngles = rot;
+        transform.eulerAngles = rot; */
     }
 }
