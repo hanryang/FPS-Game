@@ -22,4 +22,5 @@ public class PlayerRotate : MonoBehaviour
 
         // 2.물체를 회전 방향으로 회전시킨다.
         transform.eulerAngles = new Vector3(-my, mx, 0);
+    }
 }
